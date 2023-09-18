@@ -5,4 +5,12 @@
     <string name="natnum">National Number</string>
     <string name="name">Name</string>
     <string name="species">Species</string>
+    <string name="gender">Gender</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="level">Level</string>
+    <string name="base_stats">Base Stats</string>
+    <string name="stats_hp">HP</string>
+    <string name="stats_atk">ATK</string>
+    <string name="stats_def">DEF</string>
 </resources>
