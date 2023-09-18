@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/act_const"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityConst">
+
+    <TextView
+        android:id="@+id/species_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/species"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_TV" />
+
+    <TextView
+        android:id="@+id/gender_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:text="Gender"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/species_TV" />
+
+    <TextView
+        android:id="@+id/height_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:text="Height"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gender_TV" />
+
+    <TextView
+        android:id="@+id/weight_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:text="Weight"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/height_TV" />
+
+    <TextView
+        android:id="@+id/header_title_TV"
+        android:layout_width="231dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="90dp"
+        android:text="@string/header_main"
+        android:textAlignment="center"
+        android:textColor="#0B0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_desc_TV"
+        android:layout_width="267dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="72dp"
+        android:text="@string/header_desc"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title_TV" />
+
+    <TextView
+        android:id="@+id/natnum_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="27dp"
+        android:text="@string/natnum"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_desc_TV" />
+
+    <TextView
+        android:id="@+id/name_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/name"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/natnum_TV" />
+</androidx.constraintlayout.widget.ConstraintLayout>

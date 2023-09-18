@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PokeTracker</string>
+    <string name="header_main">Pokemon Tracker</string>
+    <string name="header_desc">Register your new catch</string>
+    <string name="natnum">National Number</string>
+    <string name="name">Name</string>
+    <string name="species">Species</string>
+</resources>
