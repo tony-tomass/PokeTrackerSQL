@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/species_TV"
         android:layout_width="128dp"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:text="@string/species"
         android:textAlignment="textStart"
@@ -21,7 +21,7 @@
     <TextView
         android:id="@+id/gender_TV"
         android:layout_width="128dp"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:text="Gender"
         android:textAlignment="textStart"
@@ -32,7 +32,7 @@
     <TextView
         android:id="@+id/height_TV"
         android:layout_width="128dp"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:text="Height"
         android:textAlignment="textStart"
@@ -43,13 +43,24 @@
     <TextView
         android:id="@+id/weight_TV"
         android:layout_width="128dp"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:text="Weight"
         android:textAlignment="textStart"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/height_TV" />
+
+    <TextView
+        android:id="@+id/level_TV"
+        android:layout_width="128dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:text="Level"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_TV" />
 
     <TextView
         android:id="@+id/header_title_TV"
@@ -66,6 +77,56 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/basestats_TV"
+        android:layout_width="159dp"
+        android:layout_height="31dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="236dp"
+        android:text="Base Stats"
+        android:textAlignment="textStart"
+        android:textColor="#0B0000"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/stat_hp_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="124dp"
+        android:text="HP"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/weight_TV" />
+
+    <TextView
+        android:id="@+id/stat_atk_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="ATK"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stat_hp_TV" />
+
+    <TextView
+        android:id="@+id/stat_def_TV"
+        android:layout_width="128dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:text="DEF"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stat_atk_TV" />
+
+    <TextView
         android:id="@+id/header_desc_TV"
         android:layout_width="267dp"
         android:layout_height="22dp"
@@ -79,7 +140,7 @@
     <TextView
         android:id="@+id/natnum_TV"
         android:layout_width="128dp"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="27dp"
         android:text="@string/natnum"
@@ -91,7 +152,7 @@
     <TextView
         android:id="@+id/name_TV"
         android:layout_width="128dp"
-        android:layout_height="38dp"
+        android:layout_height="42dp"
         android:layout_marginStart="16dp"
         android:text="@string/name"
         android:textAlignment="textStart"
