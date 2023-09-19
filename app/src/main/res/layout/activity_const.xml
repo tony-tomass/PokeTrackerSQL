@@ -5,7 +5,7 @@
     android:id="@+id/act_const"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityConst">
+    tools:context="com.example.poketracker.ActivityConst">
 
     <TextView
         android:id="@+id/species_TV"
@@ -159,4 +159,5 @@
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/natnum_TV" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
