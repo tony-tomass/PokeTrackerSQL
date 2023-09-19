@@ -21,6 +21,7 @@
     <string name="genderless">N/A</string>
     <string-array name="level_num">
         <!-- bruh -->
+        <item>N/A</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -71,6 +72,11 @@
         <item>48</item>
         <item>49</item>
         <item>50</item>
-
     </string-array>
+    <string name="natnum_default">896</string>
+    <string name="name_default">Glastrier</string>
+    <string name="species_default">Wild Horse Pokemon</string>
+    <string name="height_default">2.2</string>
+    <string name="weight_default">800.0</string>
+    <string name="stat_default">0</string>
 </resources>
