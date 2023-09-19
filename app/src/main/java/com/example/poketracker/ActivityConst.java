@@ -37,12 +37,30 @@ public class ActivityConst extends AppCompatActivity {
             stat_hp_et.setText(R.string.stat_default);
             stat_atk_et.setText(R.string.stat_default);
             stat_def_et.setText(R.string.stat_default);
+
+            Toast.makeText(getApplicationContext(),
+                    "Fields have been reset and given their default values.",
+                    Toast.LENGTH_SHORT).show();
         }
     };
     View.OnClickListener save_bt_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-
+            if (!checkNameLength()) {
+                Toast.makeText(getApplicationContext(),
+                        "ERROR: Invalid inputs. Please check your inputs again.",
+                        Toast.LENGTH_SHORT).show();
+            }
+            if (!checkNumber(height_et, 0.3, 19.99 )) {
+                Toast.makeText(getApplicationContext(),
+                        "ERROR: Invalid inputs. Please check your inputs again.",
+                        Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(getApplicationContext(),
+                        "Your Pokemon has been successfully recorded into our database.",
+                        Toast.LENGTH_SHORT).show();
+            }
         }
     };
 
@@ -71,6 +89,29 @@ public class ActivityConst extends AppCompatActivity {
         //Spinner ref
         level_sp = findViewById(R.id.level_SP);
 
+        //Click listeners
         reset_bt.setOnClickListener(reset_bt_listener);
+        save_bt.setOnClickListener(save_bt_listener);
     }
+
+    public boolean checkNameLength() {
+        String text = name_et.getText().toString();
+        if (text.length() < 3 || text.length() > 12) {
+            return false;
+        }
+        return true;
+    }
+
+    public boolean checkNumber(EditText id, double max, double min) {
+        String text = id.getText().toString();
+        if (text.isEmpty()) {
+            return false;
+        }
+        double num = Double.parseDouble(text);
+        if (num < min || num > max) {
+            return false;
+        }
+        return true;
+    }
+
 }
