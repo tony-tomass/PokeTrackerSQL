@@ -204,7 +204,7 @@
         android:layout_marginTop="7dp"
         android:autofillHints="Name of Pokemon"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="textCapWords"
         android:hint="@string/name_hint"
         android:textColor="#000000"
         android:textSize="14sp"

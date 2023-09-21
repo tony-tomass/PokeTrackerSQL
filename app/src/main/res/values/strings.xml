@@ -79,7 +79,7 @@
     <string name="height_default">2.2</string>
     <string name="weight_default">800.0</string>
     <string name="stat_default">0</string>
-    <string name="alphabet_only">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ </string>
+    <string name="alphabet_only">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ .</string>
     <string name="name_hint">3 to 12 alphabetical characters</string>
     <string name="stat_def_hint">5 to 614</string>
     <string name="stat_atk_hint">5 to 526</string>

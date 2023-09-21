@@ -11,10 +11,8 @@
 
     <TextView
         android:id="@+id/header_title_TV"
-        android:layout_width="231dp"
-        android:layout_height="29dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:text="@string/header_main"
         android:textAlignment="center"
         android:textColor="#0B0000"
@@ -22,4 +20,72 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/header_desc_TV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header_desc"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title_TV" />
+
+    <TextView
+        android:id="@+id/natnum_TV"
+        android:layout_width="128dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="17dp"
+        android:text="@string/natnum"
+        android:textAlignment="textStart"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/natnum_ET"
+        android:layout_width="351dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="7dp"
+        android:autofillHints="Number"
+        android:ems="10"
+        android:hint="@string/natnum_hint"
+        android:inputType="number"
+        android:textColor="#000000"
+        android:textColorHint="#757575"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/name_TV"
+        android:layout_width="128dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/name"
+        android:textAlignment="textStart"
+        android:textColor="#000000" />
+
+    <EditText
+        android:id="@+id/name_ET"
+        android:layout_width="351dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="7dp"
+        android:autofillHints="Name of Pokemon"
+        android:ems="10"
+        android:hint="@string/name_hint"
+        android:inputType="textCapWords"
+        android:digits="@string/alphabet_only"
+        android:textColor="#000000"
+        android:textColorHint="#757575"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/species_TV"
+        android:layout_width="128dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="16dp"
+        android:text="@string/species"
+        android:textAlignment="textStart"
+        android:textColor="#000000" />
+
+
 </LinearLayout>
