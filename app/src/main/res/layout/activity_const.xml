@@ -208,7 +208,6 @@
         android:hint="@string/name_hint"
         android:textColor="#000000"
         android:textSize="14sp"
-        android:digits="@string/alphabet_only"
         app:layout_constraintStart_toEndOf="@+id/name_TV"
         app:layout_constraintTop_toBottomOf="@+id/natnum_ET" />
 
@@ -220,7 +219,7 @@
         android:layout_marginTop="7dp"
         android:autofillHints="Species"
         android:ems="10"
-        android:inputType="text"
+        android:inputType="textCapWords"
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintStart_toEndOf="@+id/species_TV"
