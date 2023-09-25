@@ -106,7 +106,7 @@ public class ActivityConst extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_table);
+        setContentView(R.layout.activity_linear);
 
         //TextView ref
         natnum_tv = findViewById(R.id.natnum_TV);
