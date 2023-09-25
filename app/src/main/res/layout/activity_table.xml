@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="10dp"
-    android:paddingRight="10dp"
-    tools:context=".ActivityLinear">
+    android:stretchColumns="1"
+    tools:context=".ActivityTable">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-    
+    <TableRow
+        android:gravity="center_horizontal">
         <TextView
             android:id="@+id/header_title_TV"
             android:layout_width="match_parent"
@@ -21,31 +17,38 @@
             android:textAlignment="center"
             android:textColor="#0B0000"
             android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal">
         <TextView
             android:id="@+id/header_desc_TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:paddingBottom="18dp"
             android:text="@string/header_desc"
             android:textAlignment="center" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/natnum_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="17dp"
             android:text="@string/natnum"
             android:textAlignment="textStart"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"/>
 
         <EditText
             android:id="@+id/natnum_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Number"
             android:ems="10"
             android:hint="@string/natnum_hint"
@@ -53,22 +56,25 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/name_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
             android:text="@string/name"
             android:textAlignment="textStart"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"/>
 
         <EditText
             android:id="@+id/name_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Name of Pokemon"
             android:ems="10"
             android:hint="@string/name_hint"
@@ -76,44 +82,52 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/species_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
             android:text="@string/species"
             android:textAlignment="textStart"
-            android:textColor="#000000" />
+            android:textColor="#000000"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"/>
 
         <EditText
             android:id="@+id/species_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Species"
             android:ems="10"
             android:inputType="textCapWords"
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
+
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
 
         <TextView
             android:id="@+id/gender_TV"
-            android:layout_width="128dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
+            android:paddingTop="7dp"
             android:text="@string/gender"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <RadioGroup
             android:id="@+id/gender_RG"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:orientation="horizontal"
             android:textAlignment="textStart"
             app:layout_constraintStart_toEndOf="@+id/gender_TV"
@@ -146,22 +160,25 @@
                 tools:layout_editor_absoluteX="164dp"
                 tools:layout_editor_absoluteY="216dp" />
         </RadioGroup>
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/height_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
             android:text="@string/height"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <EditText
             android:id="@+id/height_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Number"
             android:ems="10"
             android:hint="@string/height_hint"
@@ -169,22 +186,25 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/weight_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
             android:text="@string/weight"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <EditText
             android:id="@+id/weight_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Number"
             android:ems="10"
             android:hint="@string/weight_hint"
@@ -192,52 +212,61 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/level_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
             android:text="@string/level"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <Spinner
             android:id="@+id/level_SP"
-            android:layout_width="211dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
+            android:layout_width="251dp"
+            android:layout_height="35dp"
             android:entries="@array/level_num" />
+    </TableRow>
 
+    <TableRow>
         <TextView
             android:id="@+id/basestats_TV"
-            android:layout_width="159dp"
-            android:layout_height="31dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="28dp"
+            android:paddingBottom="9dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="0dp"
             android:text="@string/base_stats"
             android:textAlignment="textStart"
             android:textColor="#0B0000"
             android:textSize="20sp"
             android:textStyle="bold" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/stat_hp_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="16dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
             android:text="@string/stats_hp"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <EditText
             android:id="@+id/stat_hp_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Number"
             android:ems="10"
             android:hint="@string/stat_hp_hint"
@@ -245,23 +274,25 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/stat_atk_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="16dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
             android:text="@string/stats_atk"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <EditText
             android:id="@+id/stat_atk_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Number"
             android:ems="10"
             android:hint="@string/stat_atk_hint"
@@ -269,23 +300,25 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingVertical="4dp">
         <TextView
             android:id="@+id/stat_def_TV"
-            android:layout_width="128dp"
+            android:layout_width="wrap_content"
             android:layout_height="22dp"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="16dp"
+            android:paddingStart="14dp"
+            android:paddingEnd="0dp"
             android:text="@string/stats_def"
             android:textAlignment="textStart"
             android:textColor="#000000" />
 
         <EditText
             android:id="@+id/stat_def_ET"
-            android:layout_width="351dp"
+            android:layout_width="251dp"
             android:layout_height="35dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="7dp"
             android:autofillHints="Number"
             android:ems="10"
             android:hint="@string/stat_def_hint"
@@ -293,24 +326,26 @@
             android:textColor="#000000"
             android:textColorHint="#757575"
             android:textSize="14sp" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp">
         <Button
             android:id="@+id/save_BT"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="276dp"
             android:text="@string/save_button" />
+    </TableRow>
 
+    <TableRow
+        android:gravity="center_horizontal"
+        android:paddingTop="4dp">
         <Button
             android:id="@+id/reset_BT"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginStart="276dp"
-            android:layout_marginBottom="10dp"
             android:text="@string/reset_button" />
+    </TableRow>
 
-    </LinearLayout>
-
-</ScrollView>
+</TableLayout>
