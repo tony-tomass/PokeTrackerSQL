@@ -308,8 +308,24 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
             android:layout_marginStart="276dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="20dp"
             android:text="@string/reset_button" />
+
+        <Button
+            android:id="@+id/switch_const_BT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_to_constraint"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/black"/>
+
+        <Button
+            android:id="@+id/switch_table_BT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/switch_to_table"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/black"/>
 
     </LinearLayout>
 

@@ -2,6 +2,7 @@ package com.example.poketracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -17,7 +18,7 @@ import android.widget.*;
 
 public class ActivityConst extends AppCompatActivity {
 
-    Button reset_bt, save_bt;
+    Button reset_bt, save_bt, switch_table_bt, switch_linear_bt;
     TextView natnum_tv, name_tv, species_tv, height_tv, weight_tv, stat_hp_tv, stat_atk_tv, stat_def_tv, gender_tv, level_tv;
     EditText natnum_et, name_et, species_et, height_et, weight_et, stat_hp_et, stat_atk_et, stat_def_et;
     RadioGroup gender_rg;
@@ -103,10 +104,26 @@ public class ActivityConst extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener switch_table_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent switching = new Intent(getApplicationContext(), ActivityTable.class);
+            startActivity(switching);
+        }
+    };
+
+    View.OnClickListener switch_linear_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent switching = new Intent(getApplicationContext(), ActivityLinear.class);
+            startActivity(switching);
+        }
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_linear);
+        setContentView(R.layout.activity_const);
 
         //TextView ref
         natnum_tv = findViewById(R.id.natnum_TV);
@@ -122,6 +139,8 @@ public class ActivityConst extends AppCompatActivity {
         //Button ref
         reset_bt = findViewById(R.id.reset_BT);
         save_bt = findViewById(R.id.save_BT);
+        switch_table_bt = findViewById(R.id.switch_table_BT);
+        switch_linear_bt = findViewById(R.id.switch_linear_BT);
         //EditText ref
         natnum_et = findViewById(R.id.natnum_ET);
         name_et = findViewById(R.id.name_ET);
@@ -142,6 +161,8 @@ public class ActivityConst extends AppCompatActivity {
         //Click listeners
         reset_bt.setOnClickListener(reset_bt_listener);
         save_bt.setOnClickListener(save_bt_listener);
+        switch_table_bt.setOnClickListener(switch_table_listener);
+        switch_linear_bt.setOnClickListener(switch_linear_listener);
     }
 
     public boolean checkNameLength(EditText id) {

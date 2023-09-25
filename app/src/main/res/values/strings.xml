@@ -86,4 +86,7 @@
     <string name="stat_hp_hint">1 to 362</string>
     <string name="weight_hint">0.1 to 820.0</string>
     <string name="height_hint">0.3 to 19.99</string>
+    <string name="switch_to_constraint">Switch to Constraint</string>
+    <string name="switch_to_table">Switch to Table</string>
+    <string name="switch_to_linear">Switch to Linear</string>
 </resources>

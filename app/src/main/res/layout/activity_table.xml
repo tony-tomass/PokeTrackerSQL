@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:stretchColumns="1"
     tools:context=".ActivityTable">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1">
+        <!-- Idk when ill indent everything -->
 
     <TableRow
         android:gravity="center_horizontal">
@@ -348,4 +353,26 @@
             android:text="@string/reset_button" />
     </TableRow>
 
-</TableLayout>
+    <TableRow
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal">
+        <Button
+            android:id="@+id/switch_const_BT"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="@string/switch_to_constraint"
+            android:backgroundTint="@color/black"
+            android:textSize="11sp"/>
+
+        <Button
+            android:id="@+id/switch_linear_BT"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:text="@string/switch_to_linear"
+            android:backgroundTint="@color/black"
+            android:textSize="11sp"/>
+    </TableRow>
+
+    </TableLayout>
+
+</ScrollView>

@@ -164,8 +164,8 @@
         android:id="@+id/save_BT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="584dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="544dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/save_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/header_desc_TV" />
@@ -174,10 +174,9 @@
         android:id="@+id/reset_BT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="584dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="604dp"
         android:text="@string/reset_button"
-        app:layout_constraintEnd_toStartOf="@+id/save_BT"
+        app:layout_constraintEnd_toEndOf="@+id/save_BT"
         app:layout_constraintTop_toBottomOf="@+id/header_desc_TV" />
 
     <EditText
@@ -348,6 +347,31 @@
         android:entries="@array/level_num"
         app:layout_constraintStart_toEndOf="@+id/level_TV"
         app:layout_constraintTop_toBottomOf="@+id/weight_ET" />
+
+    <Button
+        android:id="@+id/switch_linear_BT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/switch_to_linear"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/switch_table_BT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/switch_to_table"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/switch_linear_BT"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
