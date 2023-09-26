@@ -144,6 +144,8 @@ public class ActivityLinear extends AppCompatActivity {
         save_bt.setOnClickListener(save_bt_listener);
         switch_table_bt.setOnClickListener(switch_table_listener);
         switch_const_bt.setOnClickListener(switch_const_listener);
+
+        //level_sp.setOnClickListener(reset_bt_listener);
     }
 
     public boolean checkNameLength(EditText id) {

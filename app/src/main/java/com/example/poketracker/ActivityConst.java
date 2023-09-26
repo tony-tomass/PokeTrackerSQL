@@ -163,6 +163,8 @@ public class ActivityConst extends AppCompatActivity {
         save_bt.setOnClickListener(save_bt_listener);
         switch_table_bt.setOnClickListener(switch_table_listener);
         switch_linear_bt.setOnClickListener(switch_linear_listener);
+
+
     }
 
     public boolean checkNameLength(EditText id) {
