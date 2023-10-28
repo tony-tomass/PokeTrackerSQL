@@ -91,4 +91,5 @@
     <string name="switch_to_linear">Switch to Linear</string>
     <string name="read_permission">com.poketracker.dbprovider.permission.READ_PERMISSION</string>
     <string name="back_to_form">Back to Form</string>
+    <string name="view_data">View DB</string>
 </resources>

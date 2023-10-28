@@ -18,7 +18,7 @@ import android.widget.*;
 
 public class ActivityLinear extends AppCompatActivity {
 
-    Button reset_bt, save_bt, switch_table_bt, switch_const_bt;
+    Button reset_bt, save_bt, switch_table_bt, switch_const_bt, view_db_bt;
     TextView natnum_tv, name_tv, species_tv, height_tv, weight_tv, stat_hp_tv, stat_atk_tv, stat_def_tv, gender_tv, level_tv;
     EditText natnum_et, name_et, species_et, height_et, weight_et, stat_hp_et, stat_atk_et, stat_def_et;
     RadioGroup gender_rg;
@@ -84,6 +84,14 @@ public class ActivityLinear extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener view_db_listener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent view_db = new Intent(getApplicationContext(), PokeTrackerDB.class);
+            startActivity(view_db);
+        }
+    };
+
     /*
     View.OnClickListener switch_table_listener = new View.OnClickListener() {
         @Override
@@ -121,6 +129,7 @@ public class ActivityLinear extends AppCompatActivity {
         //Button ref
         reset_bt = findViewById(R.id.reset_BT);
         save_bt = findViewById(R.id.save_BT);
+        view_db_bt = findViewById(R.id.view_db_BT);
         //switch_const_bt = findViewById(R.id.switch_const_BT);
         //switch_table_bt = findViewById(R.id.switch_table_BT);
 
@@ -144,6 +153,7 @@ public class ActivityLinear extends AppCompatActivity {
         //Click listeners
         reset_bt.setOnClickListener(reset_bt_listener);
         save_bt.setOnClickListener(save_bt_listener);
+        view_db_bt.setOnClickListener(view_db_listener);
         //switch_table_bt.setOnClickListener(switch_table_listener);
         //switch_const_bt.setOnClickListener(switch_const_listener);
 
