@@ -2,7 +2,9 @@ package com.example.poketracker;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -16,6 +18,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.*;
 
+import java.util.LinkedList;
+
 public class ActivityLinear extends AppCompatActivity {
 
     Button reset_bt, save_bt, switch_table_bt, switch_const_bt, view_db_bt;
@@ -25,21 +29,23 @@ public class ActivityLinear extends AppCompatActivity {
     RadioButton male_rb, female_rb, no_gen_rb;
     Spinner level_sp;
     int[] ids_et = new int[] {
-            R.id.height_ET,
+            R.id.natnum_ET,
             R.id.name_ET,
             R.id.species_ET,
-            R.id.natnum_ET,
+            R.id.gender_RG,
+            R.id.height_ET,
             R.id.weight_ET,
+            R.id.level_SP,
             R.id.stat_hp_ET,
             R.id.stat_atk_ET,
             R.id.stat_def_ET,
     };
     int[] ids_tv = new int[] {
-            R.id.height_TV,
+            R.id.natnum_TV,
             R.id.name_TV,
             R.id.species_TV,
             R.id.gender_TV,
-            R.id.natnum_TV,
+            R.id.height_TV,
             R.id.weight_TV,
             R.id.stat_hp_TV,
             R.id.stat_atk_TV,
@@ -77,6 +83,25 @@ public class ActivityLinear extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
             else {
+                ContentValues new_values = new ContentValues();
+                new_values.put(PokeTrackerDBProvider.COLUMN1_NAME, natnum_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN2_NAME, name_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN3_NAME, species_et.getText().toString().trim());
+
+                //https://stackoverflow.com/questions/20138445/how-to-get-the-text-from-radio-button-in-a-radio-group-when-radio-button-checked
+                int id = gender_rg.getCheckedRadioButtonId();
+                RadioButton rb = (RadioButton) findViewById(id);
+                new_values.put(PokeTrackerDBProvider.COLUMN4_NAME, rb.getText().toString());
+
+                new_values.put(PokeTrackerDBProvider.COLUMN5_NAME, height_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN6_NAME, weight_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN7_NAME, level_sp.getSelectedItem().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN8_NAME, stat_hp_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN9_NAME, stat_atk_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN10_NAME, stat_def_et.getText().toString().trim());
+
+                getContentResolver().insert(PokeTrackerDBProvider.CONTENT_URI, new_values);
+
                 Toast.makeText(getApplicationContext(),
                         "Your Pokemon has been successfully recorded into our database.",
                         Toast.LENGTH_SHORT).show();
@@ -158,6 +183,8 @@ public class ActivityLinear extends AppCompatActivity {
         //switch_const_bt.setOnClickListener(switch_const_listener);
 
         //level_sp.setOnClickListener(reset_bt_listener);
+
+
     }
 
     public boolean checkNameLength(EditText id) {
@@ -229,6 +256,7 @@ public class ActivityLinear extends AppCompatActivity {
             tv.setTextColor(Color.BLACK);
         }
     }
+
 
 
 }

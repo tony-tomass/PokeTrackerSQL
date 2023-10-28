@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- https://www.youtube.com/watch?v=VQEmj7Zos6Y&ab_channel=SandipBhattacharya -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="12dp"
+    android:paddingBottom="12dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/name_row_TV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="32sp"/>
+    <TextView
+        android:id="@+id/_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:textSize="1sp"
+        android:visibility="invisible"/>
+    
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/natnum_row_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="National #"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/species_row_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Species"
+            android:textSize="18sp"/>
+
+        <TableRow
+            android:layout_gravity="center_horizontal">
+            <TextView
+                android:id="@+id/gender_row_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/height_row_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/weight_row_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Weight"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TextView
+            android:id="@+id/level_row_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Level"
+            android:textSize="18sp"/>
+
+        <TableRow>
+            <TextView
+                android:id="@+id/stat_hp_row_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HP"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/stat_atk_row_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ATK"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/stat_def_row_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DEF"
+                android:textSize="18sp"
+                android:layout_weight="1"/>
+        </TableRow>
+        
+    </TableLayout>
+
+
+</LinearLayout>

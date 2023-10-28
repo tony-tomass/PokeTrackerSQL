@@ -14,7 +14,7 @@ public class PokeTrackerDBProvider extends ContentProvider {
 
     public static final String DB_NAME = "PokeTrackerDB";
     public static final String TABLE_NAME = "Pokemon";
-    public static final String COLUMN1_NAME = "National No.";
+    public static final String COLUMN1_NAME = "Number";
     public static final String COLUMN2_NAME = "Name";
     public static final String COLUMN3_NAME = "Species";
     public static final String COLUMN4_NAME = "Gender";
@@ -26,8 +26,8 @@ public class PokeTrackerDBProvider extends ContentProvider {
     public static final String COLUMN10_NAME = "DEF";
     public static final String AUTHORITY = "com.poketracker.dbprovider";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + DB_NAME);
-    private static String CREATE_DB_QUERY = "CREATE TABLE " + TABLE_NAME +
-            "(_ID INTEGER PRIMARY KEY, " +
+    private static final String CREATE_DB_QUERY = "CREATE TABLE " + TABLE_NAME +
+            "( _ID INTEGER PRIMARY KEY," +
             COLUMN1_NAME + " TEXT," +
             COLUMN2_NAME + " TEXT," +
             COLUMN3_NAME + " TEXT," +
