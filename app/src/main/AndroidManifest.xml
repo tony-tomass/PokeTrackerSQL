@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <permission android:name="@string/read_permission" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PokeTracker"
         tools:targetApi="31">
+        <activity
+            android:name=".PokeTrackerDB"
+            android:exported="false" />
+
+        <provider
+            android:name=".PokeTrackerDBProvider"
+            android:authorities="com.poketracker.dbprovider"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="">
+
+        </provider>
+
         <activity
             android:name=".ActivityTable"
             android:exported="true" />
@@ -27,7 +42,6 @@
         <activity
             android:name=".ActivityConst"
             android:exported="true" />
-
     </application>
 
 </manifest>
