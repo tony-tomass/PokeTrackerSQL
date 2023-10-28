@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.*;
 import android.content.Intent;
@@ -17,8 +18,8 @@ public class PokeTrackerDB extends AppCompatActivity {
     Cursor my_cursor;
     int[] ids_et = new int[] {
             R.id._id,
-            R.id.name_row_TV,
             R.id.natnum_row_TV,
+            R.id.name_row_TV,
             R.id.species_row_TV,
             R.id.gender_row_TV,
             R.id.height_row_TV,
@@ -31,8 +32,8 @@ public class PokeTrackerDB extends AppCompatActivity {
 
     String[] col_names = new String[] {
             "_id",
-            PokeTrackerDBProvider.COLUMN2_NAME,
             PokeTrackerDBProvider.COLUMN1_NAME,
+            PokeTrackerDBProvider.COLUMN2_NAME,
             PokeTrackerDBProvider.COLUMN3_NAME,
             PokeTrackerDBProvider.COLUMN4_NAME,
             PokeTrackerDBProvider.COLUMN5_NAME,
@@ -57,10 +58,13 @@ public class PokeTrackerDB extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poke_tracker_bd);
 
-        my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, null,
+        my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, col_names,
                 null, null, null);
 
+        Log.i("test", "Testing to see where I went wrong");
+
         pokelist_lv = findViewById(R.id.pokelist_LV);
+
         SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(
                 getApplicationContext(),
                 R.layout.row,
@@ -69,6 +73,7 @@ public class PokeTrackerDB extends AppCompatActivity {
                 ids_et,
                 0
                 );
+
 
         back_bt = findViewById(R.id.back_BT);
         back_bt.setOnClickListener(back_listener);
@@ -82,6 +87,7 @@ public class PokeTrackerDB extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, placeholder);
          */
         pokelist_lv.setAdapter(simpleCursorAdapter);
+
     }
 
     public void updateListUI() {

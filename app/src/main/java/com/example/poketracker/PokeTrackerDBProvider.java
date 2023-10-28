@@ -26,18 +26,18 @@ public class PokeTrackerDBProvider extends ContentProvider {
     public static final String COLUMN10_NAME = "DEF";
     public static final String AUTHORITY = "com.poketracker.dbprovider";
     public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/" + DB_NAME);
-    private static final String CREATE_DB_QUERY = "CREATE TABLE " + TABLE_NAME +
-            "( _ID INTEGER PRIMARY KEY," +
-            COLUMN1_NAME + " TEXT," +
-            COLUMN2_NAME + " TEXT," +
-            COLUMN3_NAME + " TEXT," +
-            COLUMN4_NAME + " TEXT," +
-            COLUMN5_NAME + " TEXT," +
-            COLUMN6_NAME + " TEXT," +
-            COLUMN7_NAME + " TEXT," +
-            COLUMN8_NAME + " TEXT," +
-            COLUMN9_NAME + " TEXT," +
-            COLUMN10_NAME + " TEXT)"
+    private static final String CREATE_DB_QUERY = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME +
+            "( _id INTEGER PRIMARY KEY, " +
+            COLUMN1_NAME + " TEXT, " +
+            COLUMN2_NAME + " TEXT, " +
+            COLUMN3_NAME + " TEXT, " +
+            COLUMN4_NAME + " TEXT, " +
+            COLUMN5_NAME + " TEXT, " +
+            COLUMN6_NAME + " TEXT, " +
+            COLUMN7_NAME + " TEXT, " +
+            COLUMN8_NAME + " TEXT, " +
+            COLUMN9_NAME + " TEXT, " +
+            COLUMN10_NAME + " TEXT )"
             ;
 
     protected static final class MainDatabaseHelper extends SQLiteOpenHelper {
