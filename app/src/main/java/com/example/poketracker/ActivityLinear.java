@@ -84,6 +84,7 @@ public class ActivityLinear extends AppCompatActivity {
         }
     };
 
+    /*
     View.OnClickListener switch_table_listener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
@@ -99,6 +100,7 @@ public class ActivityLinear extends AppCompatActivity {
             startActivity(switching);
         }
     };
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -119,8 +121,8 @@ public class ActivityLinear extends AppCompatActivity {
         //Button ref
         reset_bt = findViewById(R.id.reset_BT);
         save_bt = findViewById(R.id.save_BT);
-        switch_const_bt = findViewById(R.id.switch_const_BT);
-        switch_table_bt = findViewById(R.id.switch_table_BT);
+        //switch_const_bt = findViewById(R.id.switch_const_BT);
+        //switch_table_bt = findViewById(R.id.switch_table_BT);
 
         //EditText ref
         natnum_et = findViewById(R.id.natnum_ET);
@@ -142,8 +144,8 @@ public class ActivityLinear extends AppCompatActivity {
         //Click listeners
         reset_bt.setOnClickListener(reset_bt_listener);
         save_bt.setOnClickListener(save_bt_listener);
-        switch_table_bt.setOnClickListener(switch_table_listener);
-        switch_const_bt.setOnClickListener(switch_const_listener);
+        //switch_table_bt.setOnClickListener(switch_table_listener);
+        //switch_const_bt.setOnClickListener(switch_const_listener);
 
         //level_sp.setOnClickListener(reset_bt_listener);
     }
