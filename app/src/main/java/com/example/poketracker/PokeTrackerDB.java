@@ -14,11 +14,14 @@ import android.content.Intent;
 
 import java.util.LinkedList;
 
+// TODO: Fix this => Whenever you're deleting an entry, instead of deleting selected entry, it deletes the top most entry on the ListView
+
 public class PokeTrackerDB extends AppCompatActivity {
 
     ListView pokelist_lv;
     Button back_bt;
     Cursor my_cursor;
+    SimpleCursorAdapter simpleCursorAdapter;
     int[] ids_et = new int[] {
             R.id._id,
             R.id.natnum_row_TV,
@@ -63,43 +66,44 @@ public class PokeTrackerDB extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poke_tracker_bd);
 
-        my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, col_names,
-                null, null, null);
-
-        Log.i("test", "Testing to see where I went wrong");
-
         pokelist_lv = findViewById(R.id.pokelist_LV);
         registerForContextMenu(pokelist_lv);
 
-        SimpleCursorAdapter simpleCursorAdapter = new SimpleCursorAdapter(
+        /*
+        my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, col_names,
+                null, null, null);
+        simpleCursorAdapter = new SimpleCursorAdapter(
                 getApplicationContext(),
                 R.layout.row,
                 my_cursor,
                 col_names,
                 ids_et,
                 0
-                );
+        );
+        pokelist_lv.setAdapter(simpleCursorAdapter);
+        //Moved to updateListUI()
+         */
 
+        updateListUI();
 
         back_bt = findViewById(R.id.back_BT);
         back_bt.setOnClickListener(back_listener);
 
-        /*
-        LinkedList<String> placeholder = new LinkedList<>();
-        placeholder.add("pizza");
-        placeholder.add("tomato");
-        placeholder.add("cheese");
-        ArrayAdapter<String> adapter_placeholder = new ArrayAdapter<>(getApplicationContext(),
-                android.R.layout.simple_list_item_1, placeholder);
-         */
-        pokelist_lv.setAdapter(simpleCursorAdapter);
-
     }
 
     public void updateListUI() {
-        my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, null,
+        my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, col_names,
                 null, null, null);
-        //pokemon = new LinkedList<>();
+        simpleCursorAdapter = new SimpleCursorAdapter(
+                getApplicationContext(),
+                R.layout.row,
+                my_cursor,
+                col_names,
+                ids_et,
+                0
+        );
+        pokelist_lv.setAdapter(simpleCursorAdapter);
+
     }
 
     @Override
@@ -110,7 +114,18 @@ public class PokeTrackerDB extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-        /*
+
+        natnum_row_tv = findViewById(R.id.natnum_row_TV);
+        name_row_tv = findViewById(R.id.name_row_TV);
+        species_row_tv = findViewById(R.id.species_row_TV);
+        gender_row_tv = findViewById(R.id.gender_row_TV);
+        height_row_tv = findViewById(R.id.height_row_TV);
+        weight_row_tv = findViewById(R.id.weight_row_TV);
+        level_row_tv = findViewById(R.id.level_row_TV);
+        stat_hp_row_tv = findViewById(R.id.stat_hp_row_TV);
+        stat_atk_row_tv = findViewById(R.id.stat_atk_row_TV);
+        stat_def_row_tv = findViewById(R.id.stat_def_row_TV);
+
         String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? " + " AND " +
                 PokeTrackerDBProvider.COLUMN2_NAME + " = ? " + " AND " +
                 PokeTrackerDBProvider.COLUMN3_NAME + " = ? " + " AND " +
@@ -136,22 +151,21 @@ public class PokeTrackerDB extends AppCompatActivity {
                 stat_def_row_tv.getText().toString().trim(),
         };
 
-         */
-
-        String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? ";
-
-        natnum_row_tv = findViewById(R.id.natnum_row_TV);
-
-        String[] selected_arg = {
-                natnum_row_tv.getText().toString().trim()
-        };
-
-
         getContentResolver().delete(PokeTrackerDBProvider.CONTENT_URI, selected_clause, selected_arg);
-        getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, null, null, null);
-        //getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, null, null,null,null);
 
         Toast.makeText(getApplicationContext(), "Entry has been deleted", Toast.LENGTH_SHORT).show();
+
+        // https://stackoverflow.com/questions/3053761/reload-activity-in-android
+        // Refreshing ListView by refreshing whole activity => Bad Design
+        /*
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+         */
+
+        updateListUI();
+
         return super.onContextItemSelected(item);
     }
 }
