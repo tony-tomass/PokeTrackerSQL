@@ -64,7 +64,7 @@ public class PokeTrackerDBProvider extends ContentProvider {
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
         // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
+        return SQLHelper.getWritableDatabase().delete(TABLE_NAME, selection, selectionArgs);
     }
 
     @Override

@@ -47,7 +47,7 @@ public class PokeTrackerDB extends AppCompatActivity {
             PokeTrackerDBProvider.COLUMN10_NAME,
     };
 
-    //TextView natnum_row_tv, name_row_tv, species_row_tv, gender_row_tv, height_row_tv, weight_row_tv, level_row_tv, stat_hp_row_tv, stat_atk_row_tv, stat_def_row_tv;
+    TextView natnum_row_tv, name_row_tv, species_row_tv, gender_row_tv, height_row_tv, weight_row_tv, level_row_tv, stat_hp_row_tv, stat_atk_row_tv, stat_def_row_tv;
 
     View.OnClickListener back_listener = new View.OnClickListener() {
         @Override
@@ -62,19 +62,6 @@ public class PokeTrackerDB extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poke_tracker_bd);
-
-        /*
-        natnum_row_tv = findViewById(R.layout.row);
-        name_row_tv = findViewById(R.id.name_row_TV);
-        species_row_tv = findViewById(R.id.species_row_TV);
-        gender_row_tv = findViewById(R.id.gender_row_TV);
-        height_row_tv = findViewById(R.id.height_row_TV);
-        weight_row_tv = findViewById(R.id.weight_row_TV);
-        level_row_tv = findViewById(R.id.level_row_TV);
-        stat_hp_row_tv = findViewById(R.id.stat_hp_row_TV);
-        stat_atk_row_tv = findViewById(R.id.stat_atk_row_TV);
-        stat_def_row_tv = findViewById(R.id.stat_def_row_TV);
-         */
 
         my_cursor = getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, col_names,
                 null, null, null);
@@ -123,7 +110,6 @@ public class PokeTrackerDB extends AppCompatActivity {
 
     @Override
     public boolean onContextItemSelected(@NonNull MenuItem item) {
-
         /*
         String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? " + " AND " +
                 PokeTrackerDBProvider.COLUMN2_NAME + " = ? " + " AND " +
@@ -149,16 +135,23 @@ public class PokeTrackerDB extends AppCompatActivity {
                 stat_atk_row_tv.getText().toString().trim(),
                 stat_def_row_tv.getText().toString().trim(),
         };
+
          */
 
-        //getContentResolver().delete(PokeTrackerDBProvider.CONTENT_URI, selected_clause, selected_arg);
+        String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? ";
+
+        natnum_row_tv = findViewById(R.id.natnum_row_TV);
+
+        String[] selected_arg = {
+                natnum_row_tv.getText().toString().trim()
+        };
+
+
+        getContentResolver().delete(PokeTrackerDBProvider.CONTENT_URI, selected_clause, selected_arg);
+        getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, null, null, null);
         //getContentResolver().query(PokeTrackerDBProvider.CONTENT_URI, null, null,null,null);
-        //int row_deleted = getContentResolver().delete(PokeTrackerDBProvider.CONTENT_URI, selected_clause, selected_arg);
 
         Toast.makeText(getApplicationContext(), "Entry has been deleted", Toast.LENGTH_SHORT).show();
-        //my_cursor = null;
         return super.onContextItemSelected(item);
-        //return getContentResolver().delete(PokeTrackerDBProvider.CONTENT_URI,
-        //        PokeTrackerDBProvider.COLUMN1_NAME + "=?", new String[]{item.toString()}) > 0;
     }
 }
