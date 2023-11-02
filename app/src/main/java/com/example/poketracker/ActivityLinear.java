@@ -84,21 +84,23 @@ public class ActivityLinear extends AppCompatActivity {
             }
             else {
                 ContentValues new_values = new ContentValues();
-                new_values.put(PokeTrackerDBProvider.COLUMN1_NAME, natnum_et.getText().toString().trim());
+                //This is the best I can come up with for setting little section headings/titles
+                //IDK the better way to do this, and the data table's gonna look ugly
+                new_values.put(PokeTrackerDBProvider.COLUMN1_NAME, "#" + natnum_et.getText().toString().trim());
                 new_values.put(PokeTrackerDBProvider.COLUMN2_NAME, name_et.getText().toString().trim());
-                new_values.put(PokeTrackerDBProvider.COLUMN3_NAME, species_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN3_NAME, "The " + species_et.getText().toString().trim());
 
                 //https://stackoverflow.com/questions/20138445/how-to-get-the-text-from-radio-button-in-a-radio-group-when-radio-button-checked
                 int id = gender_rg.getCheckedRadioButtonId();
                 RadioButton rb = (RadioButton) findViewById(id);
-                new_values.put(PokeTrackerDBProvider.COLUMN4_NAME, rb.getText().toString());
+                new_values.put(PokeTrackerDBProvider.COLUMN4_NAME, "Gender: " + rb.getText().toString());
 
-                new_values.put(PokeTrackerDBProvider.COLUMN5_NAME, height_et.getText().toString().trim());
-                new_values.put(PokeTrackerDBProvider.COLUMN6_NAME, weight_et.getText().toString().trim());
-                new_values.put(PokeTrackerDBProvider.COLUMN7_NAME, level_sp.getSelectedItem().toString().trim());
-                new_values.put(PokeTrackerDBProvider.COLUMN8_NAME, stat_hp_et.getText().toString().trim());
-                new_values.put(PokeTrackerDBProvider.COLUMN9_NAME, stat_atk_et.getText().toString().trim());
-                new_values.put(PokeTrackerDBProvider.COLUMN10_NAME, stat_def_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN5_NAME, height_et.getText().toString().trim() + " m");
+                new_values.put(PokeTrackerDBProvider.COLUMN6_NAME, weight_et.getText().toString().trim() + " kg");
+                new_values.put(PokeTrackerDBProvider.COLUMN7_NAME, "Level " + level_sp.getSelectedItem().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN8_NAME, "HP: " + stat_hp_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN9_NAME, "ATK: " + stat_atk_et.getText().toString().trim());
+                new_values.put(PokeTrackerDBProvider.COLUMN10_NAME, "DEF: " + stat_def_et.getText().toString().trim());
 
                 getContentResolver().insert(PokeTrackerDBProvider.CONTENT_URI, new_values);
 
