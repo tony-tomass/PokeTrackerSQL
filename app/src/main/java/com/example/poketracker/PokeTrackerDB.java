@@ -155,7 +155,6 @@ public class PokeTrackerDB extends AppCompatActivity {
                 stat_atk_row_tv.getText().toString().trim(),
                 stat_def_row_tv.getText().toString().trim(),
         };
-
          */
 
         String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? ";
