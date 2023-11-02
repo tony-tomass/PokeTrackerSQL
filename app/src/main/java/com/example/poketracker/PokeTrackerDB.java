@@ -14,7 +14,11 @@ import android.content.Intent;
 
 import java.util.LinkedList;
 
-// TODO: Fix this => Whenever you're deleting an entry, instead of deleting selected entry, it deletes the top most entry on the ListView
+// TODO: Fix this => Whenever you're deleting an entry, instead of deleting selected entry, it
+//  deletes the top most entry on the ListView (10/29)
+// TODO: Partially fixed this, but only works correctly if only deleting via finding just the
+//  national number; it will delete duplicates and leave the non-dupes alone,
+//  but deleting one still doesn't work (11/2)
 
 public class PokeTrackerDB extends AppCompatActivity {
 
@@ -126,6 +130,7 @@ public class PokeTrackerDB extends AppCompatActivity {
         stat_atk_row_tv = findViewById(R.id.stat_atk_row_TV);
         stat_def_row_tv = findViewById(R.id.stat_def_row_TV);
 
+        /*
         String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? " + " AND " +
                 PokeTrackerDBProvider.COLUMN2_NAME + " = ? " + " AND " +
                 PokeTrackerDBProvider.COLUMN3_NAME + " = ? " + " AND " +
@@ -150,6 +155,11 @@ public class PokeTrackerDB extends AppCompatActivity {
                 stat_atk_row_tv.getText().toString().trim(),
                 stat_def_row_tv.getText().toString().trim(),
         };
+
+         */
+
+        String selected_clause = PokeTrackerDBProvider.COLUMN1_NAME + " = ? ";
+        String[] selected_arg = {natnum_row_tv.getText().toString().trim()};
 
         getContentResolver().delete(PokeTrackerDBProvider.CONTENT_URI, selected_clause, selected_arg);
 
